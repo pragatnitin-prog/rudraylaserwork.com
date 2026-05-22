@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Rudray Laser Work</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+html{
+overflow-x:hidden;
+}
+
+body{
+background:#ffffff;
+overflow-x:hidden;
+}
+
+/* HEADER */
+
+header{
+width:100%;
+padding:10px 5%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+background:rgba(255,255,255,0.95);
+backdrop-filter:blur(10px);
+
+position:sticky;
+top:0;
+left:0;
+
+z-index:1000;
+
+box-shadow:0 5px 20px rgba(0,0,0,0.06);
+}
+
+/* LOGO */
+
+.logo img{
+width:170px;
+}
+
+/* MENU */
+
+nav a{
+text-decoration:none;
+margin-left:22px;
+font-size:16px;
+font-weight:600;
+color:#111;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#ff0000;
+}
+
+/* HERO */
+
+.hero{
+width:100%;
+min-height:100vh;
+
+padding:20px 7% 80px;
+
+display:flex;
+align-items:center;
+justify-content:space-between;
+flex-wrap:wrap;
+
+background:
+linear-gradient(rgba(255,255,255,0.82),rgba(255,255,255,0.82)),
+url('https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=1600&auto=format&fit=crop');
+
+background-size:cover;
+background-position:center;
+
+margin-top:-30px;
+}
+
+.hero-text{
+flex:1;
+min-width:320px;
+}
+
+.hero-text h1{
+font-size:75px;
+line-height:85px;
+color:#111;
+margin-bottom:20px;
+font-weight:700;
+}
+
+.hero-text span{
+color:#ff0000;
+}
+
+.hero-text p{
+font-size:20px;
+line-height:38px;
+max-width:650px;
+color:#555;
+margin-bottom:35px;
+}
+
+.hero-btn{
+display:inline-block;
+padding:16px 40px;
+
+background:#ff0000;
+color:#fff;
+
+text-decoration:none;
+border-radius:50px;
+
+font-size:17px;
+font-weight:600;
+
+transition:0.4s;
+
+box-shadow:0 10px 25px rgba(255,0,0,0.3);
+}
+
+.hero-btn:hover{
+background:#111;
+transform:translateY(-5px);
+}
+
+.hero-image{
+flex:1;
+text-align:center;
+min-width:320px;
+}
+
+.hero-image img{
+width:100%;
+max-width:520px;
+
+border-radius:35px;
+
+animation:float 3s ease-in-out infinite;
+
+box-shadow:0 15px 40px rgba(0,0,0,0.15);
+}
+
+@keyframes float{
+
+0%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-20px);
+}
+
+100%{
+transform:translateY(0px);
+}
+
+}
+
+/* TRUST */
+
+.trust{
+width:100%;
+
+padding:40px 7%;
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+gap:25px;
+}
+
+.trust-box{
+background:#fff;
+
+padding:30px;
+
+border-radius:25px;
+
+text-align:center;
+
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+
+transition:0.3s;
+}
+
+.trust-box:hover{
+transform:translateY(-10px);
+}
+
+.trust-box i{
+font-size:38px;
+color:#ff0000;
+margin-bottom:18px;
+}
+
+.trust-box h3{
+margin-bottom:12px;
+font-size:23px;
+}
+
+/* TITLE */
+
+.title{
+text-align:center;
+padding-top:70px;
+}
+
+.title h2{
+font-size:55px;
+color:#111;
+margin-bottom:12px;
+}
+
+.title p{
+font-size:19px;
+color:#777;
+}
+
+/* PRODUCTS */
+
+.products{
+width:100%;
+
+padding:70px 7%;
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+gap:35px;
+}
+
+.card{
+background:#fff;
+
+border-radius:35px;
+
+overflow:hidden;
+
+position:relative;
+
+transition:0.4s;
+
+box-shadow:0 10px 35px rgba(0,0,0,0.08);
+}
+
+.card:hover{
+transform:translateY(-15px);
+}
+
+.card img{
+width:100%;
+height:340px;
+
+object-fit:cover;
+
+transition:0.5s;
+}
+
+.card:hover img{
+transform:scale(1.08);
+}
+
+.tag{
+position:absolute;
+
+top:18px;
+left:18px;
+
+background:#ff0000;
+color:#fff;
+
+padding:9px 18px;
+
+border-radius:30px;
+
+font-size:13px;
+font-weight:600;
+
+box-shadow:0 5px 15px rgba(255,0,0,0.3);
+}
+
+.content{
+padding:28px;
+}
+
+.content h3{
+font-size:30px;
+margin-bottom:14px;
+color:#111;
+}
+
+.content p{
+font-size:16px;
+line-height:28px;
+color:#666;
+margin-bottom:22px;
+}
+
+.bottom{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.price{
+font-size:26px;
+font-weight:700;
+color:#ff0000;
+}
+
+.icons{
+display:flex;
+gap:10px;
+}
+
+.icons i{
+width:42px;
+height:42px;
+
+background:#111;
+color:#fff;
+
+border-radius:50%;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+cursor:pointer;
+
+transition:0.3s;
+}
+
+.icons i:hover{
+background:#ff0000;
+transform:scale(1.1);
+}
+
+/* OFFER */
+
+.offer{
+margin:40px 7%;
+
+padding:80px 40px;
+
+border-radius:35px;
+
+text-align:center;
+
+background:
+linear-gradient(rgba(0,0,0,0.7),rgba(255,0,0,0.7)),
+url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1600&auto=format&fit=crop');
+
+background-size:cover;
+background-position:center;
+
+color:#fff;
+}
+
+.offer h2{
+font-size:58px;
+margin-bottom:18px;
+}
+
+.offer p{
+font-size:19px;
+line-height:35px;
+
+max-width:850px;
+
+margin:auto;
+margin-bottom:35px;
+}
+
+.offer-btn{
+display:inline-block;
+
+padding:16px 40px;
+
+background:#fff;
+color:#111;
+
+text-decoration:none;
+
+border-radius:50px;
+
+font-size:17px;
+font-weight:600;
+
+transition:0.3s;
+}
+
+.offer-btn:hover{
+background:#111;
+color:#fff;
+}
+
+/* FOOTER */
+
+footer{
+background:#111;
+
+padding:30px;
+
+text-align:center;
+
+color:#fff;
+
+margin-top:70px;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+header{
+flex-direction:column;
+padding:15px;
+}
+
+nav{
+margin-top:12px;
+}
+
+nav a{
+margin:8px;
+}
+
+.hero{
+text-align:center;
+padding-top:40px;
+}
+
+.hero-text h1{
+font-size:48px;
+line-height:60px;
+}
+
+.hero-text p{
+font-size:18px;
+line-height:30px;
+}
+
+.title h2{
+font-size:40px;
+}
+
+.offer{
+padding:50px 25px;
+}
+
+.offer h2{
+font-size:38px;
+}
+
+.logo img{
+width:140px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+<div class="logo">
+<img src="photo/LOGO R.jpg (1).jpeg" alt="Logo">
+</div>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="product.html">Products</a>
+<a href="contact.html">Contact</a>
+</nav>
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-text">
+
+<h1>Creative <span>Laser</span><br>Products</h1>
+
+<p>
+Premium eco-friendly laser cutting products, customized wooden crafts,
+beautiful wall decor and artistic handmade collections.
+</p>
+
+<a href="#products" class="hero-btn">Explore Products</a>
+
+</div>
+
+<div class="hero-image">
+
+<img src="photo/f1.jpg">
+
+</div>
+
+</section>
+
+
+
+
+
+
+
+<!-- TITLE -->
+
+<div class="title">
+
+<h2>Trending Collection</h2>
+
+<p>Elegant • Attractive • Best Selling</p>
+
+</div>
+
+<!-- PRODUCTS -->
+
+<section class="products" id="products">
+
+<!-- CARD 1 -->
+
+<div class="card">
+
+<div class="tag">Best Seller</div>
+
+<img src="photo/t1.jpg">
+
+<div class="content">
+
+<h3>Wooden Decor Eric Harvey</h3>
+
+<p>
+Beautiful handcrafted wooden 
+Custom Cut Works | Eric Harvey
+Laser Cut Napkin Holder SVG - Wooden Table Decor.
+</p>
+
+<div class="bottom">
+
+
+
+<div class="icons">
+<i class="fa-solid fa-heart"></i>
+<i class="fa-solid fa-eye"></i>
+<i class="fa-solid fa-cart-shopping"></i>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- CARD 2 -->
+
+<div class="card">
+
+<div class="tag">Trending</div>
+
+<img src="photo/w1.jpg">
+
+<div class="content">
+
+<h3>Wooden watch</h3>
+
+<p>
+Creative laser cutting products with premium artistic finishing.
+</p>
+
+<div class="bottom">
+
+
+<div class="icons">
+<i class="fa-solid fa-heart"></i>
+<i class="fa-solid fa-eye"></i>
+<i class="fa-solid fa-cart-shopping"></i>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- CARD 3 -->
+
+<div class="card">
+
+<div class="tag">New</div>
+
+<img src="photo/y1.jpg">
+
+<div class="content">
+
+<h3>Custom Gifts</h3>
+
+<p>
+Personalized gifts specially designed for memorable occasions.
+</p>
+
+<div class="bottom">
+
+<div class="icons">
+<i class="fa-solid fa-heart"></i>
+<i class="fa-solid fa-eye"></i>
+<i class="fa-solid fa-cart-shopping"></i>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<footer>
+
+<p>© 2026 Rudray Laser Work | All Rights Reserved</p>
+
+</footer>
+
+</body>
+
+</html>
