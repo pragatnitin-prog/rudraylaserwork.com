@@ -33,55 +33,132 @@ background:#ffffff;
 overflow-x:hidden;
 }
 
-/* HEADER */
-
-/* HEADER */
+/* ===== COMMON HEADER (Rudray Laser Work) ===== */
 
 header{
 width:100%;
-padding:10px 4%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-background:rgba(255,255,255,0.95);
+background:rgba(255,255,255,0.97);
 backdrop-filter:blur(10px);
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:10px 5%;
+box-shadow:0 4px 15px rgba(0,0,0,0.08);
 position:sticky;
 top:0;
 left:0;
 z-index:1000;
-box-shadow:0 5px 20px rgba(0,0,0,0.06);
+gap:20px;
+flex-wrap:wrap;
 }
 
-/* LOGO */
+header .logo{
+display:flex;
+align-items:center;
+gap:12px;
+}
 
-.logo img{
-width:180px;
+header .logo img{
+width:130px;
 height:auto;
+object-fit:contain;
 display:block;
 }
 
-/* MENU */
-
-nav{
-display:flex;
-align-items:center;
-justify-content:flex-end;
-flex-wrap:nowrap;
-}
-
-nav a{
-text-decoration:none;
-margin-left:20px;
-font-size:17px;
-font-weight:500;
+header .logo h2{
+font-size:22px;
+font-weight:700;
 color:#111;
-transition:0.3s;
 white-space:nowrap;
 }
 
-nav a:hover{
-color:#ff0000;
+header .logo h2 span{
+color:#e00000;
 }
+
+header nav{
+display:flex;
+align-items:center;
+gap:25px;
+flex-wrap:wrap;
+}
+
+header nav a{
+text-decoration:none;
+color:#111;
+font-size:15px;
+font-weight:600;
+position:relative;
+transition:0.3s;
+}
+
+header nav a:hover,
+header nav a.active{
+color:#e00000;
+}
+
+header .right{
+display:flex;
+align-items:center;
+gap:18px;
+}
+
+header .phone{
+display:flex;
+align-items:center;
+gap:8px;
+font-size:14px;
+font-weight:600;
+color:#111;
+text-decoration:none;
+}
+
+header .phone i{
+color:#e00000;
+font-size:16px;
+}
+
+header .order-btn{
+background:#e00000;
+color:#fff;
+padding:11px 22px;
+border-radius:40px;
+text-decoration:none;
+font-size:14px;
+font-weight:600;
+white-space:nowrap;
+transition:0.3s;
+}
+
+header .order-btn:hover{
+background:#a80000;
+transform:translateY(-2px);
+}
+
+@media (max-width:900px){
+
+header{
+flex-direction:column;
+padding:14px;
+gap:14px;
+}
+
+header nav{
+justify-content:center;
+gap:15px;
+}
+
+header .logo img{
+width:90px;
+}
+
+header .right{
+flex-direction:column;
+gap:10px;
+}
+}
+
+/* ===== END COMMON HEADER ===== */
 
 /* HERO */
 
@@ -443,19 +520,6 @@ margin-top:70px;
 
 @media(max-width:900px){
 
-header{
-flex-direction:column;
-padding:15px;
-}
-
-nav{
-margin-top:12px;
-}
-
-nav a{
-margin:8px;
-}
-
 .hero{
 text-align:center;
 padding-top:40px;
@@ -483,10 +547,6 @@ padding:50px 25px;
 font-size:38px;
 }
 
-.logo img{
-width:160px;
-}
-
 }
 
 </style>
@@ -500,15 +560,23 @@ width:160px;
 <header>
 
 <div class="logo">
-<img src="photo/LOGO R.jpg (1).jpeg" alt="Logo">
+<img src="photo/LOGO R.jpg (1).jpeg" alt="Rudray Laser Work Logo">
+<h2>Rudray <span>Laser Work</span></h2>
 </div>
 
 <nav>
 <a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="product.html">Products</a>
-<a href="contact.html">Contact</a>
+<a href="about.html">About Us</a>
+<a href="product.html" class="active">Products</a>
+<a href="contact.html">Contact Us</a>
 </nav>
+
+<div class="right">
+<a href="tel:+919328692208" class="phone">
+<i class="fa-solid fa-phone"></i> +91 93286 92208
+</a>
+<a href="contact.html" class="order-btn">Contact Now →</a>
+</div>
 
 </header>
 
