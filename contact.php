@@ -1,42 +1,459 @@
-<?php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Creative Contact Page</title>
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$database = "nitinbhai";
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-// Database connection
-$conn = mysqli_connect($servername, $username, $password, $database);
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-// Check connection
-if (!$conn) {
-    die("Connection Failed: " . mysqli_connect_error());
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
 }
 
-// Form data
-$fullname = $_POST['fullname'];
-$email = $_POST['email'];
-$phone = $_POST['phone'];
-$message = $_POST['message'];
-
-// Insert query
-$sql = "INSERT INTO contact_messages(fullname, email, phone, message)
-VALUES ('$fullname', '$email', '$phone', '$message')";
-
-// Execute query
-if (mysqli_query($conn, $sql)) {
-
-    echo "
-    <script>
-        alert('Message Sent Successfully!');
-        window.location.href='contact.html';
-    </script>
-    ";
-
-} else {
-    echo "Error: " . mysqli_error($conn);
+body{
+background:#f4f1eb;
+overflow-x:hidden;
 }
 
-mysqli_close($conn);
+/* HEADER */
 
-?>
+header{
+width:100%;
+padding:18px 7%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:#ffffff;
+box-shadow:0 2px 12px rgba(0,0,0,0.05);
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:12px;
+}
+
+.logo img{
+width:60px;
+height:60px;
+object-fit:contain;
+}
+
+.logo h2{
+font-size:28px;
+font-weight:700;
+color:#111;
+}
+
+.logo span{
+color:#c0392b;
+}
+
+nav{
+display:flex;
+gap:28px;
+}
+
+nav a{
+text-decoration:none;
+color:#111;
+font-size:15px;
+font-weight:500;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#c0392b;
+}
+
+/* CONTACT SECTION */
+
+.contact-section{
+padding:80px 7%;
+}
+
+.contact-wrapper{
+width:100%;
+background:#fff;
+border-radius:35px;
+overflow:hidden;
+display:grid;
+grid-template-columns:1.1fr 0.9fr;
+box-shadow:0 15px 40px rgba(0,0,0,0.08);
+}
+
+/* LEFT SIDE */
+
+.left{
+padding:70px 60px;
+background:#fff;
+position:relative;
+}
+
+.tag{
+display:inline-block;
+background:#fce8e5;
+color:#c0392b;
+padding:10px 22px;
+border-radius:40px;
+font-size:14px;
+font-weight:600;
+margin-bottom:25px;
+}
+
+.left h1{
+font-size:58px;
+line-height:75px;
+color:#111;
+margin-bottom:25px;
+font-weight:800;
+}
+
+.left h1 span{
+color:#c0392b;
+}
+
+.left p{
+font-size:16px;
+line-height:34px;
+color:#555;
+margin-bottom:40px;
+max-width:650px;
+}
+
+/* CONTACT INFO */
+
+.contact-info{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:25px;
+margin-bottom:40px;
+}
+
+.info-box{
+background:#faf7f2;
+padding:25px;
+border-radius:22px;
+transition:0.3s;
+}
+
+.info-box:hover{
+transform:translateY(-6px);
+}
+
+.info-box i{
+font-size:28px;
+color:#c0392b;
+margin-bottom:15px;
+}
+
+.info-box h3{
+font-size:20px;
+margin-bottom:10px;
+color:#111;
+}
+
+.info-box p{
+margin:0;
+font-size:14px;
+line-height:28px;
+}
+
+/* SOCIAL */
+
+.social{
+display:flex;
+gap:15px;
+}
+
+.social a{
+width:50px;
+height:50px;
+background:#c0392b;
+color:#fff;
+display:flex;
+justify-content:center;
+align-items:center;
+border-radius:50%;
+text-decoration:none;
+font-size:18px;
+transition:0.3s;
+}
+
+.social a:hover{
+transform:scale(1.1);
+}
+
+/* RIGHT SIDE */
+
+.right{
+background:#1f1f1f;
+padding:70px 50px;
+position:relative;
+overflow:hidden;
+}
+
+.right::before{
+content:'';
+position:absolute;
+width:250px;
+height:250px;
+background:rgba(255,255,255,0.05);
+border-radius:50%;
+top:-80px;
+right:-80px;
+}
+
+.right::after{
+content:'';
+position:absolute;
+width:180px;
+height:180px;
+background:rgba(255,255,255,0.05);
+border-radius:50%;
+bottom:-60px;
+left:-60px;
+}
+
+.right h2{
+font-size:42px;
+color:#fff;
+margin-bottom:35px;
+position:relative;
+z-index:2;
+}
+
+/* FORM */
+
+.input-box{
+margin-bottom:22px;
+position:relative;
+z-index:2;
+}
+
+.input-box input,
+.input-box textarea{
+width:100%;
+padding:18px 20px;
+border:none;
+border-radius:16px;
+background:#2a2a2a;
+font-size:15px;
+color:#fff;
+outline:none;
+}
+
+.input-box textarea{
+height:160px;
+resize:none;
+}
+
+.input-box input::placeholder,
+.input-box textarea::placeholder{
+color:#aaa;
+}
+
+button{
+width:100%;
+padding:18px;
+border:none;
+border-radius:16px;
+background:#c0392b;
+color:#fff;
+font-size:16px;
+font-weight:600;
+cursor:pointer;
+transition:0.3s;
+position:relative;
+z-index:2;
+}
+
+button:hover{
+background:#a93226;
+transform:translateY(-3px);
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1100px){
+
+.contact-wrapper{
+grid-template-columns:1fr;
+}
+
+}
+
+@media(max-width:768px){
+
+header{
+flex-direction:column;
+gap:18px;
+}
+
+nav{
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.left,
+.right{
+padding:45px 25px;
+}
+
+.left h1{
+font-size:40px;
+line-height:55px;
+}
+
+.contact-info{
+grid-template-columns:1fr;
+}
+
+.right h2{
+font-size:34px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+<div class="logo">
+<img src="photo/LOGO R.jpg (1).jpeg" width="220">
+<h2>Rudray <span>Laser Work</span></h2>
+</div>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="product.html">Products</a>
+<a href="contact.html">Contact Us</a>
+</nav>
+
+
+</header>
+
+<!-- CONTACT -->
+
+<section class="contact-section">
+
+<div class="contact-wrapper">
+
+<!-- LEFT -->
+
+<div class="left">
+
+<div class="tag">
+CONTACT US
+</div>
+
+<h1>
+Let's Build Your <span>Dream Design</span>
+</h1>
+
+<p>
+We create beautiful laser-cut wooden products,
+customized decor items and creative handmade designs.
+Feel free to connect with us anytime.
+</p>
+
+<div class="contact-info">
+
+<div class="info-box">
+<i class="fa-solid fa-location-dot"></i>
+<h3>Address</h3>
+<p>B/5 Krupa Rental Gajera compund satellite road opposite KBC2 behind AR Mall mota varachha Surat 394101</p>
+
+</div>
+
+
+<div class="info-box">
+<i class="fa-solid fa-phone"></i>
+<h3>Phone</h3>
+<p>+91 9328692208</p>
+<p>+91 7572805315</p>
+<p>---Pragat Nitin---</p>
+<P>---Savaliya jagdish---</p>
+</div>
+
+
+<div class="info-box">
+<i class="fa-solid fa-clock"></i>
+<h3>Working Hours</h3>
+<p>Mon - Sat : 9AM to 8PM</p>
+</div>
+
+</div>
+
+<div class="social">
+
+<a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+
+<a href="#"><i class="fa-brands fa-instagram"></i></a>
+
+<a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+
+<a href="#"><i class="fa-brands fa-youtube"></i></a>
+</div>
+</form>
+
+</div>
+
+</div>
+
+</form>
+
+</div>
+
+
+</div>
+
+</section>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
